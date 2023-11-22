@@ -1,0 +1,41 @@
+<div>
+    <h2>Module List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Library Module</th>
+          <th>Name Tab Module</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let module of modules">
+          <td>{{ module.idModule }}</td>
+          <td>{{ module.libModule }}</td>
+          <td>{{ module.nameTabModule }}</td>
+          <td>
+            <button (click)="deleteModule(module.idModule)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>Add Module</h2>
+    <form [formGroup]="moduleForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="libModule">Library Module:</label>
+        <input type="text" id="libModule" formControlName="libModule" />
+      </div>
+      <div>
+        <label for="nameTabModule">Name Tab Module:</label>
+        <input type="text" id="nameTabModule" formControlName="nameTabModule" />
+      </div>
+      <div>
+        <button type="submit">Add Module</button>
+        <button type="button" (click)="resetForm()">Clear Form</button>
+      </div>
+    </form>
+  </div>
+  
