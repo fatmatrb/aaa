@@ -24,7 +24,7 @@ export class AttributService {
   }
 
   updateAttribut(attribut: Attribut): Observable<Attribut> {
-    const attributId = attribut.idAttribut; // Make sure you have an 'id' property in your Attributs interface
+    const attributId = attribut.idattributs; // Make sure you have an 'id' property in your Attributs interface
     return this.http.put<Attribut>(`${this.apiBaseUrl}/attributs/UpdateAttribut/${attributId}`, attribut);
   }
 

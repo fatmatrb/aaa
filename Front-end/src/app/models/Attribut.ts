@@ -1,7 +1,7 @@
 import { Module } from "./Module";
 export interface Attribut {
-    idAttribut : number ; 
-    libAttribut : string ; 
-    nameAttribut : string ; 
+    idattributs : number ; 
+    libAttributs : string ; 
+    nameAttributs : string ; 
     module: Module;
 }

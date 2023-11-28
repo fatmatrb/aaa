@@ -40,6 +40,7 @@ export class AttributComponent implements OnInit {
 
   addAttribut() {
     if (this.selectedModuleId) {
+      console.log("attribut ", this.newAttribut);
       this.attributsService.addAttributsToModule(this.newAttribut, this.selectedModuleId)
         .subscribe(() => {
           this.getAllAttributs();

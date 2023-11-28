@@ -6,12 +6,12 @@
   <!-- Add Attribute Form -->
   <form (ngSubmit)="addAttribut()">
     <label for="libAttribut">Attribute libele:</label>
-    <input type="text" placeholder="Attribut libellé" [(ngModel)]="newAttribut.libAttribut" [ngModelOptions]="{standalone: true}" required>
+    <input type="text" placeholder="Attribut libellé" [(ngModel)]="newAttribut.libAttributs" [ngModelOptions]="{standalone: true}" required>
     <label for="nameAttribut">Attribute Name:</label>
-    <input type="text" placeholder="Attribut name" [(ngModel)]="newAttribut.nameAttribut" [ngModelOptions]="{standalone: true}" required>
+    <input type="text" placeholder="Attribut name" [(ngModel)]="newAttribut.nameAttributs" [ngModelOptions]="{standalone: true}" required>
     
     <label for="selectedModule">Select Module:</label>
-    <select id="selectedModule" [(ngModel)]="selectedModuleId" name="selectedModule" required>
+    <select id="selectedModule" [(ngModel)]="selectedModuleId" name="selectedModule" required >
       <option *ngFor="let module of modules" [value]="module.idModule ">{{ module.nameTabModule }}</option>
     </select>
 
@@ -31,13 +31,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let attribut of attributs">
-        <td>{{ attribut.idAttribut}}</td>
-        <td>{{ attribut.libAttribut }}</td>
-        <td>{{ attribut.nameAttribut }}</td>
+        <td>{{ attribut.idattributs}}</td>
+        <td>{{ attribut.libAttributs }}</td>
+        <td>{{ attribut.nameAttributs }}</td>
         <td>{{  attribut.module.nameTabModule }}</td>
         <td>
           <button (click)="editAttribut(attribut)">Edit</button>
-          <button (click)="deleteAttribut(attribut.idAttribut)">Delete</button>
+          <button (click)="deleteAttribut(attribut.idattributs)">Delete</button>
         </td>
       </tr>
     </tbody>
@@ -48,9 +48,9 @@
     <h3>Edit Attribute</h3>
     <form (ngSubmit)="updateAttribut()">
       <label for="editAttributeName">Attribute libele:</label>
-      <input type="text" id="editAttributeName" [(ngModel)]="attributToUpdate.libAttribut" name="editAttributeName" required>
+      <input type="text" id="editAttributeName" [(ngModel)]="attributToUpdate.libAttributs" name="editAttributeName" required>
       <label for="editAttributelib">Attribute name:</label>
-      <input type="text" id="editAttributelib" [(ngModel)]="attributToUpdate.nameAttribut" name="editAttributelib" required>
+      <input type="text" id="editAttributelib" [(ngModel)]="attributToUpdate.nameAttributs" name="editAttributelib" required>
 
       <button type="submit">Update Attribute</button>
       <button (click)="cancelEdit()">Cancel</button>

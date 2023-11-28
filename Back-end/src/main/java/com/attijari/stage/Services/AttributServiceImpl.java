@@ -48,7 +48,8 @@ public class AttributServiceImpl implements AttributService {
 
     @Override
     public void deleteAttributs(Long id) {
-        moduleRepository.deleteById(id);
+        attributsRepository.deleteById(id);
+        System.out.println("Success");
     }
 
 }
